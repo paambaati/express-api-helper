@@ -135,7 +135,9 @@ describe('the api', function () {
         };
 
     app.get('/api/test', function (req, res) {
-      api.serverError(req, res, expected.error);
+      var err = new Error('Database error');
+      err.stack = '...';
+      api.serverError(req, res, err);
     });
 
     request(app)
