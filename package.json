@@ -1,7 +1,6 @@
 {
   "name": "express-api-helper",
   "version": "0.0.1",
-  "private": true,
   "description": "Simple API helper module for Express apps.",
   "main": "lib/index.js",
   "scripts": {
@@ -16,11 +15,7 @@
     "connect",
     "api"
   ],
-  "author": {
-    "name": "Bryan Dragon",
-    "email": "bryandragon@gmail.com",
-    "url": "http://www.bryandragon.com"
-  },
+  "author": "Bryan Dragon",
   "license": "MIT",
   "devDependencies": {
     "expect.js": "~0.2.0",
