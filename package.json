@@ -1,0 +1,33 @@
+{
+  "name": "express-api-helper",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Simple API helper module for Express apps.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bryandragon/express-api-helper.git"
+  },
+  "keywords": [
+    "express",
+    "connect",
+    "api"
+  ],
+  "author": {
+    "name": "Bryan Dragon",
+    "email": "bryandragon@gmail.com",
+    "url": "http://www.bryandragon.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "expect.js": "~0.2.0",
+    "mocha": "~1.8.1",
+    "supertest": "~0.5.1"
+  },
+  "dependencies": {
+    "express": "~3.1.0"
+  }
+}
