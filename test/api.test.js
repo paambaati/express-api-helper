@@ -10,12 +10,17 @@ describe('the api', function () {
     var app = express()
       , data = { message: 'ok' };
 
+    app.configure(function () {
+      app.use(express.bodyParser());
+    });
     app.get('/api/test', function (req, res) {
-      api.ok(req, res, data);
+      api.requireParams(req, res, ['username'], function (err) {
+        api.ok(req, res, { message: 'ok' });
+      });
     });
 
     request(app)
-      .get('/api/test')
+      .get('/api/test?username=hercules')
       .expect('Content-Type', /json/)
       .expect(200)
       .expect(JSON.stringify(data), done);
