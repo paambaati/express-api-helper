@@ -1,6 +1,8 @@
 # express-api-helper
 
-Simple API helper module for Express apps.
+Simple API helper module for [Express](http://expressjs.com) apps.
+
+[![Build Status](https://secure.travis-ci.org/bryandragon/express-api-helper.png)](http://travis-ci.org/bryandragon/express-api-helper)
 
 ## API
 
