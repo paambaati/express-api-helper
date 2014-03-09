@@ -61,7 +61,7 @@ Respond with `500 Internal Server Error` and JSON-encoded error object, `{messag
 
 ### `requireParams(req, res, params, callback)`
 
-Require that listed parameters are present. Checks for presence of each parameter in `req.body` object if using `express.bodyParser` middleware; otherwise checks for presence of each parameter in `req.query`. If any parameters are missing, invokes `badRequest` with an array of error messages with the form `"Missing required parameter: %s"`.
+Require that listed parameters are present. Checks for presence of each parameter in `req.body` object if using `express.bodyParser` middleware; otherwise checks for presence of each parameter in `req.params` or `req.query`. If any parameters are missing, invokes `badRequest` with an array of error messages with the form `"Missing required parameter: %s"`.
 
 * `req` express Request
 * `res` express Response
