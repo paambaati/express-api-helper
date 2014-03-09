@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.0.3 (2014-03-09)
+## 0.0.3 (2014-03-08)
 
   * When testing for required params in `requireParams()`, use `hasOwnProperty()` and check for params in `req.params` in addition to `req.body` and `req.query`
 
