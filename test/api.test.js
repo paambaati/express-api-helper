@@ -13,14 +13,15 @@ describe('the api', function () {
     app.configure(function () {
       app.use(express.bodyParser());
     });
-    app.get('/api/test', function (req, res) {
-      api.requireParams(req, res, ['username'], function (err) {
+    app.post('/api/test/:username', function (req, res) {
+      api.requireParams(req, res, ['username', 'password', 'token'], function (err) {
         api.ok(req, res, { message: 'ok' });
       });
     });
 
     request(app)
-      .get('/api/test?username=hercules')
+      .post('/api/test/hercules?token=0')
+      .send({password: ''})
       .expect('Content-Type', /json/)
       .expect(200)
       .expect(JSON.stringify(data), done);
