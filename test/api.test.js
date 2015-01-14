@@ -65,6 +65,23 @@ describe('the api', function () {
       .expect(JSON.stringify(expected), done);
   });
 
+  it('should respond with 400 status when required request headers are missing', function (done) {
+    var app = express()
+      , expected = { message: 'Bad Request', errors: ['Missing required header parameter: X-Auth-Token'] };
+
+    app.get('/api/test', function (req, res) {
+      api.requireHeaders(req, res, ['X-Auth-Token'], function (err) {
+        api.ok(req, res, { message: 'ok' });
+      });
+    });
+
+    request(app)
+      .get('/api/test')
+      .expect('Content-Type', /json/)
+      .expect(400)
+      .expect(JSON.stringify(expected), done);
+  });
+
   it('should respond with 401 status when the client is unauthorized', function (done) {
     var app = express()
       , expected = { message: 'Unauthorized' };
