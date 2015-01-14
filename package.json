@@ -1,7 +1,7 @@
 {
   "name": "express-api-helper",
   "description": "Simple API helper module for Express apps.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Bryan Dragon",
   "main": "lib/index.js",
   "scripts": {
