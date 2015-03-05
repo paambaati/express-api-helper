@@ -68,6 +68,15 @@ Require that listed parameters are present. Checks for presence of each paramete
 * `params` Array (of String) or String
 * `callback(err)` Function
 
+### `requireHeaders(req, res, headers, callback)`
+
+Require that listed headers are present. Checks for presence of each header in `req.headers`. If any parameters are missing, invokes `badRequest` with an array of error messages with the form `"Missing required header parameter: %s"`.
+
+* `req` express Request
+* `res` express Response
+* `headers` Array (of String) of String
+* `callback(err)` Function 
+
 ## Example
 
 Sample usage:
