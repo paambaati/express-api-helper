@@ -1,15 +1,15 @@
 {
   "name": "express-api-helper",
   "description": "Simple API helper module for Express apps.",
-  "version": "0.0.4",
-  "author": "Bryan Dragon",
+  "version": "0.0.5",
+  "author": "Ganesh 'GP' Prasannah <g.prasannah@gmail.com>",
   "main": "lib/index.js",
   "scripts": {
     "test": "make test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/bryandragon/express-api-helper.git"
+    "url": "git://github.com/paambaati/express-api-helper.git"
   },
   "keywords": [
     "express",
