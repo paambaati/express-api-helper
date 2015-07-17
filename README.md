@@ -2,7 +2,7 @@
 
 Simple API helper module for [Express](http://expressjs.com) apps.
 
-[![Build Status](https://secure.travis-ci.org/bryandragon/express-api-helper.png)](http://travis-ci.org/bryandragon/express-api-helper)
+[![Build Status](https://secure.travis-ci.org/paambaati/express-api-helper.png)](http://travis-ci.org/paambaati/express-api-helper)
 
 ## API
 
@@ -25,6 +25,13 @@ Respond with `400 Bad Request` and JSON-encoded error object, `{message:String,e
 ### `unauthorized(req, res)`
 
 Respond with `401 Unauthorized` and JSON-encoded error object, `{message:String}`.
+
+* `req` express Request
+* `res` express Response
+
+### `forbidden(req, res)`
+
+Respond with `403 Forbidden` and JSON-encoded error object, `{message:String}`.
 
 * `req` express Request
 * `res` express Response
@@ -82,16 +89,17 @@ Require that listed headers are present. Checks for presence of each header in `
 Sample usage:
 
 ```javascript
-var http = require('http')
-  , express = require('express')
-  , api = require('express-api-helper')
-  , app = express()
-  , Post = require('./models/post');
+var http = require('http'),
+    express = require('express'),
+    bodyParser = require('body-parser'),
+    api = require('express-api-helper'),
+    app = express(),
+    Post = require('./models/post');
 
-app.configure(function () {
-  app.use(express.bodyParser());
-  app.use(app.router);
-});
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 app.all('/api/*', function (req, res, next) {
   if (!req.user) return api.unauthorized(req, res);
@@ -138,11 +146,12 @@ http.createServer(app).listen(3000, function () {
 To run the tests, clone the repository and install the dev dependencies:
 
 ```bash
-git clone git://github.com/bryandragon/express-api-helper.git
-cd express-api && npm install
+git clone git://github.com/paambaati/express-api-helper.git
+cd express-api-helper && npm install
 make test
 ```
 
 ## License
 
-MIT
+[MIT](LICENSE)
+
