@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.0.5 (2015-07-17)
+
+ * Add support for `403` Fobidden response.
+ * Update testcases with Express 4.x changes (body-parser).
+ * Bump dependencies - express 3.4.8 → 4.13.1, mocha 1.17.1 → 2.2.5, supertest 0.9.0 → 1.0.1.
+ * Add Travis builds for Node 0.12 and iojs.
+
 ## 0.0.4 (2014-12-24)
 
  * Fix deprecation warnings thrown by Express 4.
